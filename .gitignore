@@ -35,6 +35,6 @@ ehthumbs.db
 Icon?
 Thumbs.db
 workspace.xml
-.idea
+.idea/*
 settings_local.py
 media/cache
