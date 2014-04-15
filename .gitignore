@@ -13,6 +13,7 @@
 *.o
 *.so
 *.py[co]
+*.pyc
 
 # Packages #
 ############
