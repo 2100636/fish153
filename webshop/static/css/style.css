@@ -659,6 +659,13 @@ padding: 20px;
 .price_cart .col-md-6{
 border-left: 1px solid #E4C0C0;
 }
+.cart_items_menu {
+    display: none;
+    position: absolute;
+}
+.cart_icon:hover .cart_items_menu {
+    display: block;
+}
 /*-------------Подвал---------------*/
 .soc_battom li{
 list-style-type:none;

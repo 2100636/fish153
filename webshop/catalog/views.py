@@ -80,8 +80,8 @@ def product_view(request, product_slug, template_name="catalog/product.html"):
             # Если cookies работают, читаем их
             if request.session.test_cookie_worked():
                 request.session.delete_test_cookie()
-            url = urlresolvers.reverse('show_cart')
-            return HttpResponseRedirect(url)
+            # url = urlresolvers.reverse('show_cart')
+            return HttpResponseRedirect('/product/%s' % product_slug)
         # if form2.is_valid():
         #     phone = request.POST['phone']
         #     text = u'Заявка на товар %s \n телефон: %s' % (page_title, phone)
