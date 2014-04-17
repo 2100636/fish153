@@ -3,9 +3,7 @@
 
 {% with cart_item_count as cart_count %}
 	<a href="{% url show_cart %}">
-
-
-		Кол-во товаров:{{ cart_count }}
+	<i class="icon-addtocart"><span >{{ cart_count }}</span></i>
 {#        {{ cart_count|pluralize }}#}
 	</a>
 {% endwith %}

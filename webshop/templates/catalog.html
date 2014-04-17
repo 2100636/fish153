@@ -16,50 +16,47 @@
         <div class="logo_phone">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3">
-                      <div class="logo">
-                        <a href="/"> <img src="{{ STATIC_URL }}images/podarkoff_logo.png"></a>
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="phone">
-                           <img src="{{ STATIC_URL }}images/phone.png">
-                           <p>+7(926) 304 5777</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                       <div class="purchase">
-                           <a href="/">
-                           <img src="{{ STATIC_URL }}images/credit-card.png">
-                           <p>условия оплаты</p>
-                            </a>
-                       </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="dostavka">
-                           <a href="/">
-                           <img src="{{ STATIC_URL }}images/bag.png">
-                           <p>условия доставки</p>
-                           </a>
-                        </div>
-                    </div>
+
+
+{#                    <div class="col-md-3">#}
+{#                       <div class="purchase">#}
+{#                           <a href="/">#}
+{#                           <img src="{{ STATIC_URL }}images/credit-card.png">#}
+{#                           <p>условия оплаты</p>#}
+{#                            </a>#}
+{#                       </div>#}
+{#                    </div>#}
+{#                    <div class="col-md-3">#}
+{#                        <div class="dostavka">#}
+{#                           <a href="/">#}
+{#                           <img src="{{ STATIC_URL }}images/bag.png">#}
+{#                           <p>условия доставки</p>#}
+{#                           </a>#}
+{#                        </div>#}
+{#                    </div>#}
                 </div>
             </div>
         </div>
-
-        <div class="main_menu">
+<div  id="menu_fixed">
+        <div class="main_menu" >
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-9">
             {#            содержимое в category_list.html#}
             {#            <h3>Блок основное меню</h3>#}
                         {% categories_tree request %}
                     </div>
+                     <div class="cart_bloc">
+                        <div class="col-md-3"><div class="cart_icon"><a href="{% url show_cart %}">
+                            {% cart_box request %}</a></div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
 
-
+</div>
 
     {#            flex-slider#}
      {% block slider %}
