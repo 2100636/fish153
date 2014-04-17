@@ -197,6 +197,29 @@ background-color: #FFF;
 .phone_area {
 	float: right;
 }
+/*партнеры*/
+#modern .frame {
+    width: 100%;
+    height: 300px;
+    background: #fff;
+}
+#modern .frame ul {
+    list-style: none;
+    height: 100%;
+    margin: 0;
+}
+#modern .frame ul li {
+    float: left;
+    height: 100%;
+    padding: 20px 20px;
+}
+#modern .frame ul li.first {
+    padding-left:0px;
+}
+#modern .frame ul li img {
+    max-width: none;
+    width: 100px;
+}
 
 /*-----------Логотип телефон----------------*/
 
