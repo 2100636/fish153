@@ -145,13 +145,23 @@ i.fa.fa-check-square{
     font-family: 'PT Sans Narrow', sans-serif;
 	font-size: 16px;
 	color:#333;
+    text-decoration: none;
+    padding: 18px 12px 12px 12px!important;
+}
+.cart_icon a:hover{
+    padding: 18px 12px 12px 12px!important;
+    background: #FF3B30;
+}
+.cart_icon a span:hover{
+    background: #000;
 }
 .cart_icon span{
-    font-family: 'PT Sans Narrow', sans-serif;
+    font-family: 'helvetica', helvetica, Arial;
     background: #FF3B30;
     padding: 2px 6px 2px 6px;
     border-radius: 50%;
-    font-size: 15px;
+    font-size: 13px;
+    color: #fff;
 }
 #navigation ul{
     list-style:none;
