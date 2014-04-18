@@ -25,6 +25,10 @@
         <link href="{{ STATIC_URL }}font/css/font-awesome.min.css" rel="stylesheet">
         <link href="{{ STATIC_URL }}font/css/whhg.css" rel="stylesheet">
 
+        {% block mighty_css %}
+            <link href="{{ STATIC_URL }}mightySlider/src/css/mightyslider.css" rel="stylesheet">
+        {% endblock %}
+
     {#    blueimp #}
         <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}blueimp/blueimp-gallery.min.css" media="all">
 
@@ -185,6 +189,71 @@
 
 
 
+         {% block mighty_js %}
+        <script type="text/javascript" src="{{ STATIC_URL }}mightySlider/src/js/mightyslider.js"></script>
+
+        <script>
+            jQuery(document).ready(function($) {
+
+                    var $win = $(window),
+                isTouch = !!('ontouchstart' in window),
+                clickEvent = isTouch ? 'tap' : 'click';
+
+                // Modern Example
+                (function(){
+                    function calculator(width){
+                        var percent = '50%';
+                        if (width <= 768) {
+                            percent = '100%';
+                        }
+                        else {
+                            percent = '50%';
+                        }
+                        return percent;
+                    };
+
+                    var $carousel = $('#modern'),
+                    $frame = $('.frame', $carousel);
+                    $frame.mightySlider({
+                        speed: 500,
+                        autoScale: 1,
+                        viewport: 'fill',
+
+                        // Navigation options
+                        navigation: {
+                            navigationType: 'basic',
+                            activateOn:     clickEvent,
+                            slideSize: calculator($win.width())
+                        },
+
+                        cycling: {
+                            cycleBy:       'pages', // Enable automatic cycling by 'slides' or 'pages'.
+                            pauseTime:     5000, // Delay between cycles in milliseconds.
+                            pauseOnHover:  0,    // Pause cycling when mouse hovers over the FRAME.
+                            startPaused:   0     // Whether to start in paused sate.
+                          },
+
+                        // Buttons options
+                        buttons: {
+                            prevPage: $('#modern_prev'),
+                            nextPage: $('#modern_next')
+                        }
+                    });
+
+                    var API = $frame.data().mightySlider;
+
+                    $win.resize(function(){
+                        API.set({
+                            navigation: {
+                                slideSize: calculator($win.width())
+                            }
+                        });
+                    });
+                })();
+            // End of Modern Example
+            });
+        </script>
+    {% endblock %}
 
     {#    flex-slider#}
         <script src="{{ STATIC_URL }}js/jquery.flexslider-min.js"></script>
@@ -193,20 +262,6 @@
         {#    blueimp#}
         {% block bottom_script %}
         {% endblock %}
-        {#    конец blueimp#}
-
-    {#    <script type="text/javascript">#}
-    {#        (function($) {#}
-    {#      		$(document).ready(function(){#}
-    {##}
-    {#                $(".popular_products").hover(function () {#}
-    {#                    $(this).find(".description_hidden").removeClass(".hidden");#}
-    {#                    alert("Hello");#}
-    {#                });#}
-    {##}
-    {#      		});#}
-    {#    	})(jQuery);#}
-    {#    </script>#}
 
     </body>
 </html>

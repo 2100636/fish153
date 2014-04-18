@@ -155,6 +155,41 @@
 {#                <h2>Раздел после контента</h2>#}
 {#            </div>#}
 
+    {% block partners %}
+        <h2>Наши партнеры</h2>
+        <div class="featurette">
+            <div class="controls marginbottom">
+                <a class="button2" id="modern_prev"><i class="fa fa-angle-left"></i>Назад</a>
+                <span class="divider"></span>
+                <a class="button2" id="modern_next">Вперед<i class="fa fa-angle-right"></i></a>
+            </div>
+        </div>
+        <div class="mightySlider mightyslider_windows8_skin" id="modern">   <!-- PARENT -->
+            <div class="frame review_manual">   <!-- FRAME -->
+                <ul class="slideelement">   <!-- SLIDEELEMENT -->
+                    <li class="">
+                        <img src="/media/products/images/061_big.jpg">
+                    </li>
+                    <li class="">
+                        <img src="/media/products/images/130971_0.jpg">
+                    </li>
+                    <li class="">
+                        <img src="/media/products/images/coj_gal.jpg">
+                    </li>
+                    <li class="">
+                        <img src="/media/products/images/handbags.jpg">
+                    </li>
+                    <li class="">
+                        <img src="/media/products/images/bg3-product_5.jpg">
+                    </li>
+                    <li class="">
+                        <img src="/media/products/images/coj_gal.jpg">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    {% endblock %}
+
     {#        блок футер#}
             <div id="footer">
                 <div class="container">

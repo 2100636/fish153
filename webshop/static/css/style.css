@@ -137,7 +137,11 @@ i.fa.fa-check-square{
 .nav.log_menu i{
     font-size:16px;
 }
-
+/*-------------КАРЗИНА----------------------*/
+.cart_items_menu{
+    background: #fff;
+    margin-top: 12px;
+}
 .cart_icon .icon-addtocart{
 	font-size:20px;
 }
@@ -232,6 +236,29 @@ ul.menu li:hover ul.children {
 /*мои стили*/
 .phone_area {
 	float: right;
+}
+/*партнеры*/
+#modern .frame {
+    width: 100%;
+    height: 300px;
+    background: #fff;
+}
+#modern .frame ul {
+    list-style: none;
+    height: 100%;
+    margin: 0;
+}
+#modern .frame ul li {
+    float: left;
+    height: 100%;
+    padding: 20px 20px;
+}
+#modern .frame ul li.first {
+    padding-left:0px;
+}
+#modern .frame ul li img {
+    max-width: none;
+    width: 100px;
 }
 
 /*-----------Логотип телефон----------------*/
@@ -690,6 +717,13 @@ padding: 20px;
 }
 .price_cart .col-md-6{
 border-left: 1px solid #E4C0C0;
+}
+.cart_items_menu {
+    display: none;
+    position: absolute;
+}
+.cart_icon:hover .cart_items_menu {
+    display: block;
 }
 /*-------------Подвал---------------*/
 .soc_battom li{
