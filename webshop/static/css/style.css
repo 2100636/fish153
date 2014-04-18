@@ -140,7 +140,23 @@ i.fa.fa-check-square{
 /*-------------КАРЗИНА----------------------*/
 .cart_items_menu{
     background: #fff;
-    margin-top: 12px;
+    margin-top: 11px;
+    border: 1px solid #E4E4E4;
+    border-top: 3px solid #FF3B30;
+    z-index: 999;
+    padding: 10px;
+}
+.cart_icon .btn-primary a:hover{
+    background: none;
+}
+.cart_icon .btn-primary a{
+    color: #fff;
+}
+.cart_icon .btn-primary{
+    padding: 4px 0px;
+}
+.cart_items_menu img{
+    padding: 10px;
 }
 .cart_icon .icon-addtocart{
 	font-size:20px;
@@ -156,7 +172,7 @@ i.fa.fa-check-square{
     padding: 18px 12px 12px 12px!important;
     background: #FF3B30;
 }
-.cart_icon a span:hover{
+.cart_icon:hover  span{
     background: #000;
 }
 .cart_icon span{
@@ -580,17 +596,18 @@ padding: 16px 0px 14px 0px;
   color: #666;
 }
 .btn-primary {
-  color: #636363;
-  background-color: #FFFFFF;
-  border-color: #B8B8B8;
-  font-weight: bold;
+  color: #fff;
+  padding: 7px 15px;
+  background: #0e78ff;
   font-family: 'helvetica';
+  border: 0;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
 color: #fff;
-background: #e67c8e;
-border-color: #B8B8B8;
+background: #000;
+border: 0;
+
 }
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
 color: #FFF;
