@@ -70,8 +70,9 @@ a.cart{
 
 /*навигация*/
 #menu_fixed {
-width: 100%;
-background:#F7F7F7;
+    width: 100%;
+    background:#F7F7F7;
+    border-bottom: 1px solid #E4E4E4;
 }
 
 #menu_fixed .navbar{
@@ -138,6 +139,10 @@ i.fa.fa-check-square{
     font-size:16px;
 }
 /*-------------КАРЗИНА----------------------*/
+.cart_items_prod {
+    border-bottom: 1px solid #E8E8E8;
+    margin-bottom: 7px;
+}
 .cart_items_menu{
     background: #fff;
     margin-top: 11px;

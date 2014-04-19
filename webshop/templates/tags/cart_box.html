@@ -25,17 +25,19 @@
 
     <div class="cart_items_menu">
         {% for item in cart_i %}
+        <div class="cart_items_prod">
             {{ item.product.name }}
             {% thumbnail item.product.get_image.url "100x100" crop="center" as im %}
             <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
-            <div class="btn btn-primary">
-                <a href="{% url show_cart %}">Показать карзину</a>
-            </div>
+        </div>
         {% endthumbnail %}
         {% endfor %}
+        <div class="btn btn-primary">
+             <a href="{% url show_cart %}">Показать карзину</a>
+        </div>
     </div>
 
 {% else %}
-    <p>нет товаров</p>
+
 {% endif %}
 
