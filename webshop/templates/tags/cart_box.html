@@ -3,6 +3,13 @@
 {% load thumbnail %}
 {#{% load menu_photo %}#}
 
+
+{#{% with cart_item_count as cart_count %}#}
+	<a href="{% url show_cart %}">
+	<i class="icon-addtocart"><span >{{ cart_i.count }}</span></i>
+{#        {{ cart_count|pluralize }}#}
+	</a>
+{#{% endwith %}#}
 {#{% with cart_item_count as cart_count %}#}
 {#	<a href="{% url show_cart %}">#}
 {##}
@@ -12,20 +19,25 @@
 {#	</a>#}
 {#{% endwith %}#}
 
-<a href="{% url show_cart %}">Товаров: {{ cart_i.count }}</a>
+{#<a href="{% url show_cart %}"> {{ cart_i.count }}</a>#}
 
 {% if cart_i %}
 
     <div class="cart_items_menu">
         {% for item in cart_i %}
+        <div class="cart_items_prod">
             {{ item.product.name }}
             {% thumbnail item.product.get_image.url "100x100" crop="center" as im %}
             <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+        </div>
         {% endthumbnail %}
         {% endfor %}
+        <div class="btn btn-primary">
+             <a href="{% url show_cart %}">Показать карзину</a>
+        </div>
     </div>
 
 {% else %}
-    <p>нет товаров</p>
+
 {% endif %}
 
