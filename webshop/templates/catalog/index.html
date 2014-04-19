@@ -30,18 +30,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                 <div class="col-md-12">
-
-                            <div class="col-md-3">
-                                <h3>
-                                    <div class="breadcrumb">Популярные товары</div>
-                                </h3>
-                            </div>
+                    <div class="col-md-12 border_bot">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h3>
+                                <div class="breadcrumb">Популярные товары</div>
+                            </h3>
+                        </div>
                     </div>
-
+                </div>
 
                     {% for p in products %}
-                        <div class="col-md-4 popular_products">
+                        <div class="col-md-3 popular_products">
                             <div class="product_thumbnail">
                                 <a href="{{ p.get_absolute_url }}">
                                     {% thumbnail p.image.url "298x319" crop="center" as im %}
@@ -129,8 +129,8 @@
             <div class="col-md-12">
                 <div class="row">
                     {% if bestseller %}
-                            <div class="col-md-12">
-                                <div class="col-md-3">
+                            <div class="col-md-12 border_bot">
+                                <div class="col-md-4">
                                     <h3><div class="breadcrumb">Лучшие продажи</div></h3>
                                 </div>
                             </div>
