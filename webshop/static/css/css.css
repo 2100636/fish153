@@ -61,7 +61,7 @@ div.cart_box a{
 #footer{
     clear: both;
     background-color: #0088CC;
-    color: White;
+    color: #a8a8a8;
     text-align: center;
 }
 a.skip_link{
@@ -80,7 +80,7 @@ ul.errorlist{
     /*margin-bottom: 6px;*/
 /*}*/
 div#footer a{
-    color: White;
+    color: #a8a8a8;
     font-size: small;
     text-decoration: underline;
     font-weight: normal;

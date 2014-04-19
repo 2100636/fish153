@@ -590,7 +590,7 @@ margin: 9px 0px 0px 15px;
 #footer{
      background-image: url(../images/poly.png);
     background-position: 50% 50%;
-    background-color: #B1A1A1;
+    border-top: 1px solid #E4E4E4;
     height: 212px;
     padding-top: 40px;
 
