@@ -24,7 +24,9 @@
                             <ol class="carousel-indicators">
                                 {% for image in images %}
                                     <li data-target="#my_slider" data-slide-to="{{ forloop.counter0 }}" class="{% if image == images|first %}active{% endif %}">
-                                        <img src="/media/{{ image.url }}" alt="">
+                                        {% thumbnail image.url "100x100" crop="center" as im %}
+                                            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                                        {% endthumbnail %}
                                     </li>
                                 {% endfor %}
                             </ol>
@@ -34,7 +36,7 @@
                                 {% for image in images %}
                                     <div class="item {% if image == images|first %}active{% endif %}">
 {#                                        <img src="/media/{{ image.url }}" alt="">#}
-                                        {% thumbnail image.url "360x360" crop="center" as im %}
+                                        {% thumbnail image.url "200x200" crop="center" as im %}
                                             <a href="/media/{{ image.url }}">
                                                 <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
                                             </a>
