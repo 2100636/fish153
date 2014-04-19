@@ -72,11 +72,11 @@
                         <div class="auth">
                             <ul class="nav log_menu" id="nav">
                                 {% if user.is_authenticated %}
-                                    <li><i class="icon-avataralt"><a href="{% url my_account %}">{% trans "My Account" %}</a></i></li>
-                                    <li ><i class="icon-avataralt"><a href="{% url django.contrib.auth.views.logout %}">{% trans "Logout" %}</a></i></li>
+                                    <li><i class="fa fa-user"></i><a href="{% url my_account %}">{% trans "My Account" %}</a></li>
+                                    <li ><i class="fa fa-lock"></i><a href="{% url django.contrib.auth.views.logout %}">{% trans "Logout" %}</a></li>
                                 {% else %}
-                                    <li style=" margin: 6px 22px 0px 0px; "><i class="icon-avataralt"><a href="{% url django.contrib.auth.views.login %}">{% trans "Login" %}</a></i></li>
-                                   <li style=" margin-top: 6px; "> <i class="fa fa-check-square"><a href="{% url register %}">{% trans "Register" %}</a></i></li>
+                                    <li style=" margin: 6px 10px 0px 0px; "><i class="fa fa-user"></i><a href="{% url django.contrib.auth.views.login %}">{% trans "Login" %}</a></li>
+                                   <li style=" margin-top: 6px; "> <i class="fa fa-unlock-alt"></i><a href="{% url register %}">{% trans "Register" %}</a></li>
                                 {% endif %}
                             </ul>
                         </div>
