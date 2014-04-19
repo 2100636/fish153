@@ -16,50 +16,47 @@
         <div class="logo_phone">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3">
-                      <div class="logo">
-                        <a href="/"> <img src="{{ STATIC_URL }}images/podarkoff_logo.png"></a>
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="phone">
-                           <img src="{{ STATIC_URL }}images/phone.png">
-                           <p>+7(926) 304 5777</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                       <div class="purchase">
-                           <a href="/">
-                           <img src="{{ STATIC_URL }}images/credit-card.png">
-                           <p>условия оплаты</p>
-                            </a>
-                       </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="dostavka">
-                           <a href="/">
-                           <img src="{{ STATIC_URL }}images/bag.png">
-                           <p>условия доставки</p>
-                           </a>
-                        </div>
-                    </div>
+
+
+{#                    <div class="col-md-3">#}
+{#                       <div class="purchase">#}
+{#                           <a href="/">#}
+{#                           <img src="{{ STATIC_URL }}images/credit-card.png">#}
+{#                           <p>условия оплаты</p>#}
+{#                            </a>#}
+{#                       </div>#}
+{#                    </div>#}
+{#                    <div class="col-md-3">#}
+{#                        <div class="dostavka">#}
+{#                           <a href="/">#}
+{#                           <img src="{{ STATIC_URL }}images/bag.png">#}
+{#                           <p>условия доставки</p>#}
+{#                           </a>#}
+{#                        </div>#}
+{#                    </div>#}
                 </div>
             </div>
         </div>
-
-        <div class="main_menu">
+<div  id="menu_fixed">
+        <div class="main_menu" >
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-9">
             {#            содержимое в category_list.html#}
             {#            <h3>Блок основное меню</h3>#}
                         {% categories_tree request %}
                     </div>
+                     <div class="cart_bloc">
+                        <div class="col-md-3"><div class="cart_icon">
+                            {% cart_box request %}</div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
 
-
+</div>
 
     {#            flex-slider#}
      {% block slider %}
@@ -91,18 +88,6 @@
                                 </div>
                                 <div class="col-md-6  hidden-phone">
                                     <img src="{{ STATIC_URL }}images/icon-2.png" alt="Slide 2">
-                                </div>
-                            </div>
-    {#                        slide 3#}
-                             <div class="slide row-fluid third" style="width: 100%; float: left; display: block;">
-                                <div class="col-md-5 col-md-offset-1 caption caption-right">
-                                    <h2 class="enlarge"><span class="em">Flexor</span> Bootstrap Theme</h2>
-                                    <h4>High quality, responsive theme!</h4>
-                                    <p>Perfect for your App, Web service, company or portfolio! Magna tincidunt sociis ac integer amet non. Rhoncus augue? Tempor porttitor sed, aliquet phasellus a, nisi nunc aliquet nec rhoncus enim porttitor ultrices lacus tristique?</p>
-                                    <a href="https://wrapbootstrap.com/user/themelize_me" class="btn more-link large"><i class="default"></i> Learn More</a>
-                                </div>
-                                <div class="col-md-6  hidden-phone">
-                                    <img src="{{ STATIC_URL }}images/icon-3.png" alt="Slide 2">
                                 </div>
                             </div>
                         </div>
