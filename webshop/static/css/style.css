@@ -325,11 +325,35 @@ color: #333;
 .tri_bloka .col-md-12{
     margin: 22px 0px 60px 0px;
 }
+.tri_bloka .col-md-4{
+    padding: 20px;
+}
+.tri_bloka .iconka{
+    text-align: center;
+}
+.blok_krest{
+    background: #1AA1E1;
+    padding: 20px;
+    color: #fff;
+}
+.blok_concelayr{
+    background: #D31F46;
+    padding: 20px;
+    color: #fff;
+}
+.blok_prochie{
+    background: #89B929;
+    padding: 20px;
+    color: #fff;
+}
+.tri_bloka h2:hover{
+    color: rgb(236, 230, 243);
+}
 .tri_bloka h2{
 text-transform: uppercase;
 font-weight: bold;
 letter-spacing: 2px;
-color: #555;
+color: #fff;
 text-align: center;
 font-size: 27px;
 }
@@ -352,27 +376,30 @@ text-transform: uppercase;
 .popular_products, .best_selling{
     margin-top: 30px;
 }
-#popular_products{
+#popular_products,#best_selling{
 background: #F7F7F7;
 padding: 40px 0px 100px 0px;
 }
 #popular_products .breadcrumb,#best_selling .breadcrumb, #catalog .col-md-3 h1,#cart .col-md-3 h1{
-background: #E67C8E;
-text-align: center;
-padding: 8px 15px;
-border-radius: 4px;
-font-family: 'Open Sans Condensed' ;
-color: #fff;
-font-size: 22px;
+background: none;
+font-family: 'Open Sans Condensed';
+color: #5C5C5C;
+font-size: 35px;
 }
 .tri_bloka{
     margin-bottom: 60px;
 }
-#popular_products .product_thumbnail, #catalog .product_thumbnail{
+#popular_products .product_thumbnail, #catalog .product_thumbnail,.best_selling .product_thumbnail{
 background: #fff;
 padding: 30px;
-border: 1px solid #E8E8E8;
-border-radius: 3px;
+border: 1px solid #EEEEEE;
+border-radius: 7px;
+}
+.breadcrumb {
+margin-bottom: 5px;
+}
+.border_bot{
+    border-bottom: 1px solid #E4E4E4;
 }
 #catalog .product_thumbnail{
     margin-bottom: 30px;
@@ -381,6 +408,7 @@ border-radius: 3px;
 #popular_products .product_thumbnail img, .best_selling .product_thumbnail img{
     border-bottom: 1px solid #E8E8E8;
     width: 100%;
+    height: 100%;
   -webkit-transition: all 1s ease;
      -moz-transition: all 1s ease;
        -o-transition: all 1s ease;
@@ -480,6 +508,7 @@ color: #E67C8E;
 }
 #best_selling .product_thumbnail{
     margin-bottom: 30px;
+    margin-top: 30px;
 }
 .description_hidden.opacity {
     -moz-transition: all 300ms ease-out;
@@ -516,9 +545,7 @@ color: #E67C8E;
 
 /*--------------Акции и скидки-------------*/
 #promotion_discount{
-    background-image: url(../images/poly.png);
-    background-position: 50% 50%;
-    background-color:rgba(115, 89, 136, 0.81);
+    background: #fff;
     height: 250px;
 }
 .promotion .static-text,.discount .static-text {
@@ -531,7 +558,6 @@ border-radius: 3px;
 }
 
 .promotion .icon, .discount .icon {
-background: url(../images/bg-left-static.png) no-repeat 0 0;
 position: absolute;
 top: 38px;
 width: 20px;
