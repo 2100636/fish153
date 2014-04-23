@@ -5,8 +5,8 @@ from django.contrib import admin
 
 from webshop import settings
 from dajaxice.core import dajaxice_autodiscover, dajaxice_config
-dajaxice_autodiscover()
 
+dajaxice_autodiscover()
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -19,6 +19,8 @@ urlpatterns = patterns('',
     url(r'^admin_tools/', include('admin_tools.urls')),
 
     url(dajaxice_config.dajaxice_url, include('dajaxice.urls')),
+    # url(r'^%s/' % settings.DAJAXICE_MEDIA_PREFIX, include('dajaxice.urls')),
+
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),

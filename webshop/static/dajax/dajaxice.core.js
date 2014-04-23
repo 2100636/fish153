@@ -1,32 +1,18 @@
 
 var Dajaxice = {
 
-
-
-
-
-
-
     webshop: {
-
-
-
-
 
         ajaxapp: {
 
             send_form: function(callback_function, argv, custom_settings) {
                 return Dajaxice.call('webshop.ajaxapp.send_form', 'POST', callback_function, argv, custom_settings);
+            },
+            order_form: function(callback_function, argv, custom_settings) {
+                return Dajaxice.call('webshop.ajaxapp.order_form', 'POST', callback_function, argv, custom_settings);
             }
 
-
-
-
         }
-
-
-
-
 
     }
 ,

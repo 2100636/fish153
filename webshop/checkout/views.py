@@ -5,6 +5,8 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.utils.translation import ugettext_lazy as _
+from django.conf import settings
+
 
 from webshop.checkout.forms import CheckoutForm
 from webshop.checkout.models import Order, OrderItem
@@ -61,21 +63,24 @@ def contact(request, template_name='checkout/checkout.html'):
             order = response.get('order', 0)
             # получаем список заказынных товаров для передачи в письмо
             order_item = OrderItem.objects.filter(order_id=order.id)
+            transaction = order.transaction_id
             items = ''
             for item in order_item:
                 items = items + '%s \n' % item.name
             if order_number:
                 request.session['order_number'] = order_number
                 receipt_url = urlresolvers.reverse('checkout_receipt')
-                subject = u'7works заявка от %s' % request.POST['shipping_name']
-                message = u'Заказ №: %s \n Имя: %s \n телефон: %s \n почта: %s \n id: %s \n Товары: \n %s' % (order_number, request.POST['shipping_name'], request.POST['phone'], request.POST['email'], order.id, items)
+                subject = u'7works заявка от %s операция: %s' % (request.POST['shipping_name'], transaction)
+                message = u'Заказ №: %s \n Имя: %s \n телефон: %s \n почта: %s \n id: %s \n Товары: %s' % (order_number, request.POST['shipping_name'], request.POST['phone'], request.POST['email'], order.id, items)
                 send_mail(subject, message, 'teamer777@gmail.com', ['greenteamer@bk.ru'], fail_silently=False)
                 return HttpResponseRedirect(receipt_url)
             # return HttpResponseRedirect('/')
         else:
-            form = ContactForm(request.POST)
+
+            # form = ContactForm(request.POST)
             return render(request, 'checkout/checkout.html', {
                 'form': form,
+                'error': form.errors,
             })
     else:
         form = ContactForm()

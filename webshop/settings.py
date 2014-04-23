@@ -152,10 +152,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 DAJAXICE_MEDIA_PREFIX="dajaxice"
 
-DAJAX_FUNCTIONS=(
-    'webshop.ajaxapp.ajax.send_form',
-    'webshop.ajaxapp.ajax.load_form',
-)
+# DAJAX_FUNCTIONS=(
+#     'webshop.ajaxapp.ajax.order_form',
+#     'webshop.ajaxapp.ajax.send_form',
+# )
 
 INSTALLED_APPS = (
     'admin_tools',
@@ -182,6 +182,7 @@ INSTALLED_APPS = (
     'webshop.news',
     'webshop.search',
     'webshop.ajaxapp',
+    'webshop.slider',
     'mptt',
     'bootstrap3',
     'sorl.thumbnail',

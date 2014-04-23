@@ -43,21 +43,20 @@
                     {% for p in products %}
                         <div class="col-md-3 popular_products">
                             <div class="product_thumbnail">
-                                <a href="{{ p.get_absolute_url }}">
-                                    {% thumbnail p.image.url "298x319" crop="center" as im %}
-                                        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
-                                    {% endthumbnail %}
-{#                                  <img src="{{ p.image_url }}"alt="{{ p.name }}" />#}
-                                  <br />
-                                  <h3>{{ p.name }}</h3>
-                                </a>
+                                {% thumbnail p.image.url "298x319" crop="center" as im %}
+                                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                                {% endthumbnail %}
+                                <br />
+                                <h3>{{ p.name }}</h3>
                                 <br />
                                 <p>{{ p.price }} руб.</p>
                             </div>
                             <div class="description_hidden opacity">
                                 <p class="description_brand">{{ p.brand }}</p>
-                                <p>{{ p.name }}</p>
-                                <p>{{ p.description }}</p>
+                                <p class="description_name">{{ p.name }}</p>
+                                <p>{{ p.description|removetags:"img"|truncatewords:"30"|safe }}</p>
+                                <a href="{{ p.get_absolute_url }}">Подробнее</a>
+                                <p class="description_price"><i class="fa fa-rub"></i>{{ p.price }}</p>
                             </div>
                         </div>
                     {% endfor %}
@@ -149,7 +148,11 @@
                                         <p>{{ b.price }} руб.</p>
                                     </div>
                                     <div class="description_hidden opacity">
-                                        <p class="description_brand">{{ p.brand }}</p>
+                                        <p class="description_brand">{{ b.brand }}</p>
+                                        <p class="description_name">{{ b.name }}</p>
+                                        <p>{{ b.description|removetags:"img"|truncatewords:"30"|safe }}</p>
+                                        <a href="{{ b.get_absolute_url }}">Подробнее</a>
+                                        <p class="description_price"><i class="fa fa-rub"></i>{{ b.price }}</p>
                                     </div>
                                 </div>
 

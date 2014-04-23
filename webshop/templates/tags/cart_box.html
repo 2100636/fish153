@@ -10,20 +10,19 @@
     <ul class="dropdown-menu">
         <div class="cart_items_menu">
             {% if cart_i %}
-
                 {% for item in cart_i %}
-                <div class="cart_items_prod">
-                    {{ item.product.name }}
-                    {% thumbnail item.product.get_image.url "100x100" crop="center" as im %}
-                        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
-                    {% endthumbnail %}
-                </div>
-
+                    <div class="cart_items_prod">
+                        {% thumbnail item.product.get_image.url "100x100" crop="center" as im %}
+                            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                        {% endthumbnail %}
+                        <div class="text_item">
+                            <p class="name_item">{{ item.product.name }}</p>
+                            <p>Цена: <i class="fa fa-rub"></i>{{ item.product.price }}</p>
+                            <p>Колличество: {{ item.quantity }}</p>
+                        </div>
+                    </div>
                 {% endfor %}
-                <div class="btn btn-primary">
-                     <a href="{% url show_cart %}">Показать карзину</a>
-                </div>
-
+                <a href="{% url show_cart %}">Показать корзину</a>
             {% else %}
                 <p>Нет товаров в корзине</p>
             {% endif %}
