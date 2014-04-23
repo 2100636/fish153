@@ -11,6 +11,7 @@ from webshop.cart import cart
 from webshop.catalog.forms import *
 from django.core.mail import send_mail
 from webshop.catalog.models import Category, Product, Characteristic, ProductImage
+from webshop.slider.models import Slider
 from webshop.news.models import News
 
 
