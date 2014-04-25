@@ -72,7 +72,7 @@ def contact(request, template_name='checkout/checkout.html'):
                 receipt_url = urlresolvers.reverse('checkout_receipt')
                 subject = u'7works заявка от %s операция: %s' % (request.POST['shipping_name'], transaction)
                 message = u'Заказ №: %s \n Имя: %s \n телефон: %s \n почта: %s \n id: %s \n Товары: %s' % (order_number, request.POST['shipping_name'], request.POST['phone'], request.POST['email'], order.id, items)
-                send_mail(subject, message, 'teamer777@gmail.com', ['greenteamer@bk.ru'], fail_silently=False)
+                send_mail(subject, message, 'teamer777@gmail.com', ['fish153.ru@gmail.com'], fail_silently=False)
                 return HttpResponseRedirect(receipt_url)
             # return HttpResponseRedirect('/')
         else:
