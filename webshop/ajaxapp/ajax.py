@@ -74,7 +74,7 @@ def send_form(request, form):
         product_name = form.cleaned_data.get('product_name')
         subject = u'Заявка в 1 клик'
         message = u'Телефон: %s \n Товар: %s' % (phone , product_name)
-        send_mail(subject, message, 'teamer777@gmail.com', ['forward.70@yandex.ru'], fail_silently=False)
+        send_mail(subject, message, 'teamer777@gmail.com', ['fish153.ru@gmail.com'], fail_silently=False)
 
         order = OrderOneClick(phone=phone , product_name=product_name)
         order.save()

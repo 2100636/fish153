@@ -60,7 +60,7 @@ class Product(models.Model):
     name = models.CharField(_(u'Name'), max_length=255, unique=True)
     slug = models.SlugField(_(u'Slug'), max_length=255, unique=True,
                             help_text=_(u'Unique value for product page URL, created from name.'))
-    articul = models.CharField(verbose_name=u'Артикул', max_length=10,blank=True)
+    articul = models.CharField(verbose_name=u'Артикул', max_length=15,blank=True)
     brand = models.CharField(_(u'Brand'), max_length=50,blank=True)
     sku = models.CharField(_(u'SKU'), max_length=50,
                            help_text=_(u'Stock-keeping unit'),blank=True) # кол-во товара на складе

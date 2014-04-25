@@ -21,15 +21,7 @@
 
                         <div id="my_slider" class="carousel slide" data-ride="carousel">
                             <!-- Indicators -->
-                            <ol class="carousel-indicators">
-                                {% for image in images %}
-                                    <li data-target="#my_slider" data-slide-to="{{ forloop.counter0 }}" class="{% if image == images|first %}active{% endif %}">
-                                        {% thumbnail image.url "100x100" crop="center" as im %}
-                                            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
-                                        {% endthumbnail %}
-                                    </li>
-                                {% endfor %}
-                            </ol>
+
 
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner" id="links">
@@ -55,6 +47,16 @@
                             <a class="right carousel-control" href="#my_slider" data-slide="next">
                                 <span class="glyphicon glyphicon-chevron-right"></span>
                             </a>
+
+                            <ol class="carousel-indicators">
+                                {% for image in images %}
+                                    <li data-target="#my_slider" data-slide-to="{{ forloop.counter0 }}" class="{% if image == images|first %}active{% endif %}">
+                                        {% thumbnail image.url "100x100" crop="center" as im %}
+                                            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                                        {% endthumbnail %}
+                                    </li>
+                                {% endfor %}
+                            </ol>
                         </div>
 
                     {% else %}

@@ -40,53 +40,76 @@
 
     <div class='container'>
         <div class="row">
+
             <div class="col-md-3">
                 <div class="logo">
-                    <a href="/"> <img src="{{ STATIC_URL }}images/podarkoff_logo.png"></a>
+                    <a href="/">
+                        <img src="{{ STATIC_URL }}images/podarkoff_logo.png">
+                        <p class="logo_site">Fish153.ru</p>
+                        <p class="logo_description">ИНТЕРНЕТ-МАГАЗИН ХРИСТИАНСКОЙ И ИУДЕЙСКОЙ ПРОДУКЦИИ</p>
+                    </a>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="phone">
-                    <img src="{{ STATIC_URL }}images/phone.png">
-                    <p>+7(926) 304 5777</p>
-                </div>
-            </div>
+{#            <div class="col-md-3">#}
+{#                <div class="phone">#}
+{#                    <img src="{{ STATIC_URL }}images/phone.png">#}
+{#                    <p>+7 (913) 888 97-70</p>#}
+{#                </div>#}
+{#            </div>#}
 
-            <div class="col-md-3">
-                <div class="menu_top">
-                    <nav role="navigation">
-                        <div class="region region-navigation">
-                            <ul class="menu nav navbar-nav">
-                                <li><a href="/o-nas/">О нас</a></li>
-                                <li><a href="/dostavka/">Доставка</a></li>
-                                <li><a href="/contact/">Контакты</a></li>
-                                <li></i><a href="{% url show_cart %}">{% trans "Shopping Cart" %}</a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
+            <div class="col-md-9">
+                <div class="row">
 
-            <div class="col-md-3">
-                <div class="phone_area">
-                        <div class="auth">
-                            <ul class="nav log_menu" id="nav">
-                                {% if user.is_authenticated %}
-                                    <li><i class="fa fa-user"></i><a href="{% url my_account %}">{% trans "My Account" %}</a></li>
-                                    <li ><i class="fa fa-lock"></i><a href="{% url django.contrib.auth.views.logout %}">{% trans "Logout" %}</a></li>
-                                {% else %}
-                                    <li style=" margin: 6px 10px 0px 0px; "><i class="fa fa-user"></i><a href="{% url django.contrib.auth.views.login %}">{% trans "Login" %}</a></li>
-                                   <li style=" margin-top: 6px; "> <i class="fa fa-unlock-alt"></i><a href="{% url register %}">{% trans "Register" %}</a></li>
-                                {% endif %}
-                            </ul>
+                    <div class="col-md-12 overflow_wrapper">
+                        <div class="phone">
+                            <img src="{{ STATIC_URL }}images/phone.png">
+                            <p class="phone_text">+7 (913) 888 97-70</p>
+    {#                            <p class="email">fish153.ru@gmail.com</p>#}
+                            <a href="mailto:fish153.ru@gmail.com">fish153.ru@gmail.com</a>
                         </div>
-{#                        <div class="phone">8-913-888-68-99</div>#}
-{#                        <div class="form_button">#}
-{#                            <!-- <button class="btn btn-primary form-submit" data-toggle="modal" data-target="#myModalForm">Заказать</button> -->#}
-{#                            <button class="btn btn-primary form-submit" data-toggle="modal" data-target="#myModalForm">Заказать</button>#}
-{#                        </div>#}
                     </div>
+
+                    <div class="col-md-12">
+                        <div class="row">
+
+                            <div class="col-md-8 overflow_wrapper">
+                                <div class="menu_top">
+                                    <nav role="navigation">
+                                        <div class="region region-navigation">
+                                            <ul class="menu nav navbar-nav">
+                                                <li><a href="/o-nas/">О нас</a></li>
+                                                <li><a href="/dostavka/">Оплата и доставка</a></li>
+                                                <li><a href="{{ STATIC_URL }}/files/fish.xls">Скачать прайс</a></li>
+                                                <li><a href="/contact/">Контакты</a></li>
+{#                                                <li></i><a href="{% url show_cart %}">{% trans "Shopping Cart" %}</a></li>#}
+                                            </ul>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 overflow_wrapper">
+                                <div class="phone_area">
+                                    <div class="auth">
+                                        <ul class="nav log_menu" id="nav">
+                                            {% if user.is_authenticated %}
+                                                <li><i class="fa fa-user"></i><a href="{% url my_account %}">{% trans "My Account" %}</a></li>
+                                                <li ><i class="fa fa-lock"></i><a href="{% url django.contrib.auth.views.logout %}">{% trans "Logout" %}</a></li>
+                                            {% else %}
+                                                <li style=" margin: 6px 10px 0px 0px; "><i class="fa fa-user"></i><a href="{% url django.contrib.auth.views.login %}">{% trans "Login" %}</a></li>
+                                               <li style=" margin-top: 6px; "> <i class="fa fa-unlock-alt"></i><a href="{% url register %}">{% trans "Register" %}</a></li>
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
+            </div>
+
 
 
         </div>
