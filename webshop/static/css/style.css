@@ -293,7 +293,7 @@ i.fa.fa-check-square{
 }
 .phone_area .auth ul li {
 	float: left;
-    margin: 23px 0 0 10px;
+    margin: 6px 10px 0px 0px;
 }
 ul.menu li ul.children {
 	display: none;
@@ -433,6 +433,9 @@ color: #333;
 
 /*-----------популярные товары---------------*/
 
+.tri_bloka_one {
+    min-height: 290px;
+}
 .tri_bloka .col-md-12{
     margin: 22px 0px 60px 0px;
 }
