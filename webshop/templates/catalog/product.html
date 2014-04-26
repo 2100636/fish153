@@ -19,7 +19,7 @@
 {#                    {% endthumbnail %}#}
                     {% if images %}
 
-                        <div id="my_slider" class="carousel slide" data-ride="carousel">
+                        <div id="my_slider" class="carousel slide" style="{% if images.count > 3 and images.count < 7 %}margin-bottom: 220px;{% elif images.count > 6 %}margin-bottom: 340px;{% endif %}" data-ride="carousel">
                             <!-- Indicators -->
 
 
@@ -105,7 +105,13 @@
                             </div>
                             <div class="col-md-3">
                                 <form method="post" action="." class="cart">{% csrf_token %}
-                                    {{ form.as_p }}
+                                    <div class="hidden">
+                                        {{ form.product_slug }}
+                                    </div>
+                                    <div class="quantity">
+                                        <label for="id_quantity">Количество:</label>
+                                        {{ form.quantity }}
+                                    </div>
                                     <input class="btn btn-primary" type="submit" value="{% trans "Add To Cart" %}"
                                     name="submit" alt="{% trans "Add To Cart" %}" />
                                 </form>
@@ -140,7 +146,7 @@
                       <li><a href="#feedback" data-toggle="tab">{% trans "Feedback" %}</a></li>
                     </ul>
                     <div class="tab-content">
-                      <div class="tab-pane active" id="description">{{ p.description }}</div>
+                      <div class="tab-pane active" id="description"><h4>Отличное качество!</h4>{{ p.description }}</div>
                       <div class="tab-pane" id="characteristics">
                         <div class="row-fluid">
                           <div class="span5">
@@ -156,7 +162,7 @@
                                   {% for characteristic in characteristics %}
                                     <tr>
                                     <th>{{ characteristic.characteristic_type }}</th>
-                                    <th>{{ characteristic.value }}</th>
+                                    <th>{{ characteristic.value }} {% if characteristic.characteristic_type.name == "Длина" %}мм{% endif %}</th>
                                   </tr>
                                   {% endfor %}
                                 </tbody>
