@@ -11,6 +11,7 @@ class ProductAdminForm(forms.ModelForm):
 	"""Форма для управления товаром"""
 	class Meta:
 		model = Product
+		exclude = ['created_at', 'updated_at']
 
 	def clean_price(self):
 		"""Проверка поля цена"""
@@ -44,15 +45,7 @@ class ProductAddToCartForm(forms.Form):
 
 
 class ProductOneClickForm(forms.ModelForm):
-    # phone = forms.CharField(label=u'Ваш телефон (обязательно)', max_length=255)
-    # product_slug = forms.CharField(widget=forms.HiddenInput())
-    class Meta:
-        model = OrderOneClick
-        # exclude = ('product_name')
-        # widgets = {
-        #     'phone': forms.TextInput(attrs={'placeholder': "Ваш телефон"}),
-        #     'description': forms.Textarea(
-        #         attrs={'placeholder': 'Enter description here'}),
-        # }
-
-
+	class Meta:
+		model = OrderOneClick
+		exclude = ['product_name']
+    
