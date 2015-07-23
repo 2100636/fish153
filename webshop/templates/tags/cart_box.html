@@ -4,7 +4,7 @@
 
 <ul class="nav">
   <li class="dropdown">
-    <a href="{% url show_cart %}" class="dropdown-toggle" data-toggle="dropdown">
+    <a href="{% url 'show_cart' %}" class="dropdown-toggle" data-toggle="dropdown">
         <i class="icon-addtocart"><span >{{ cart_i.count }}</span></i>
     </a>
     <ul class="dropdown-menu">
@@ -22,7 +22,7 @@
                         </div>
                     </div>
                 {% endfor %}
-                <a href="{% url show_cart %}">Показать корзину</a>
+                <a href="{% url 'show_cart' %}">Показать корзину</a>
             {% else %}
                 <p>Нет товаров в корзине</p>
             {% endif %}
