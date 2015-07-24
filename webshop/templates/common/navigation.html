@@ -61,11 +61,11 @@
                                     <div class="auth">
                                         <ul class="nav log_menu" id="nav">
                                             {% if user.is_authenticated %}
-                                                <li><i class="fa fa-user"></i><a href="{% url 'my_account' %}">{% trans "My Account" %}</a></li>
-                                                <li ><i class="fa fa-lock"></i><a href="{% url 'django.contrib.auth.views.logout' %}">{% trans "Logout" %}</a></li>
+                                                <li><i class="fa fa-user"></i><a href="{% url 'my_account' %}">Личный кабинет</a></li>
+                                                <li ><i class="fa fa-lock"></i><a href="{% url 'django.contrib.auth.views.logout' %}">Выйти</a></li>
                                             {% else %}
-                                                <li style=" margin: 6px 10px 0px 0px; "><i class="fa fa-user"></i><a href="{% url 'django.contrib.auth.views.login' %}">{% trans "Login" %}</a></li>
-                                               <li style=" margin-top: 6px; "> <i class="fa fa-unlock-alt"></i><a href="{% url 'register' %}">{% trans "Register" %}</a></li>
+                                                <li style=" margin: 6px 10px 0px 0px; "><i class="fa fa-user"></i><a href="{% url 'django.contrib.auth.views.login' %}">Войти</a></li>
+                                               <li style=" margin-top: 6px; "> <i class="fa fa-unlock-alt"></i><a href="{% url 'register' %}">Зарегистрироваться</a></li>
                                             {% endif %}
                                         </ul>
                                     </div>
@@ -86,4 +86,3 @@
 </header>
 
 {% endblock %}
-

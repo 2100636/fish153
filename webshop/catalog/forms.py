@@ -47,5 +47,4 @@ class ProductAddToCartForm(forms.Form):
 class ProductOneClickForm(forms.ModelForm):
 	class Meta:
 		model = OrderOneClick
-		exclude = ['product_name']
-    
+		exclude = []
