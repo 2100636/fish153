@@ -23,3 +23,5 @@ pids/
 save_2gis_data.py
 get_2gis_data.py
 get_2gis_filials.py
+
+db_fish153.sqlite3
